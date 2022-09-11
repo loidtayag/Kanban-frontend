@@ -51,7 +51,7 @@ export function ExitModal({
         setOverlay(false);
       }}
     >
-      <Img src="/exit.SVG" alt="Exit overlay" />
+      <Img src="exit.SVG" alt="Exit overlay" />
     </Button>
   );
 }
@@ -59,7 +59,7 @@ export function ExitModal({
 export function ExitModalSubmit() {
   return (
     <Button type="submit">
-      <Img src="/exit.SVG" alt="Exit overlay" />
+      <Img src="exit.SVG" alt="Exit overlay" />
     </Button>
   );
 }

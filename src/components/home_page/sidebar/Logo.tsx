@@ -20,7 +20,7 @@ const Flex = styled.div`
 
 const Visual = styled.img.attrs(() => ({
   alt: "Logo",
-  src: "/cat.JPG",
+  src: "cat.JPG",
 }))`
   margin-right: ${spacing};
   width: 6rem;

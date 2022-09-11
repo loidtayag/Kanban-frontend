@@ -28,7 +28,7 @@ const Visual = styled.button.attrs(({ onclick }: { onclick: () => void }) => ({
 
 const Embed = styled.img.attrs(() => ({
   alt: "Reveal sidebar",
-  src: "/show.SVG",
+  src: "show.SVG",
 }))`
   width: 3.5rem;
   filter: ${theme.grayImg};

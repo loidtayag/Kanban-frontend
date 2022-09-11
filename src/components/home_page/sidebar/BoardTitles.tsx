@@ -99,7 +99,7 @@ const DeleteOverlay = styled(
         }}
       >
         <img
-          src="/exit.SVG"
+          src="exit.SVG"
           alt="Exit overlay"
           style={{
             cursor: "pointer",
@@ -253,7 +253,7 @@ const BoardIndividual = (
           >
             <img
               alt="Table chart"
-              src="/select.SVG"
+              src="select.SVG"
               style={{
                 /* https://codepen.io/sosuke/pen/Pjoqqp */
                 filter:
@@ -317,7 +317,7 @@ const BoardIndividual = (
             }}
           >
             <img
-              src="/delete-subtask.SVG"
+              src="delete-subtask.SVG"
               alt="Delete subtask"
               style={{
                 width: theme.iconSize,
@@ -368,7 +368,7 @@ const BoardCreate = (key: number, setIsOverlay: (value: boolean) => void) => (
   >
     <img
       alt="Table chart"
-      src="/select.SVG"
+      src="select.SVG"
       style={{
         //https://codepen.io/sosuke/pen/Pjoqqp
         filter:
@@ -417,7 +417,7 @@ const Overlay = styled(
         }}
       >
         <img
-          src="/exit.SVG"
+          src="exit.SVG"
           alt="Exit overlay"
           style={{
             cursor: "pointer",

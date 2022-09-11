@@ -42,7 +42,7 @@ const Flex = styled.div`
 
 const Sun = styled.img.attrs(() => ({
   alt: "Light mode",
-  src: "/sun.SVG",
+  src: "sun.SVG",
 }))`
   width: 3.7rem;
   filter: ${theme.grayImg};
@@ -104,7 +104,7 @@ const Input = styled.input.attrs(() => ({
 
 const Moon = styled.img.attrs(() => ({
   alt: "Dark mode",
-  src: "/moon.SVG",
+  src: "moon.SVG",
 }))`
   width: 4rem;
   filter: ${theme.grayImg};
