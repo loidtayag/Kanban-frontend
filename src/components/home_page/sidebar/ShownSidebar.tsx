@@ -46,7 +46,7 @@ const Visual = styled.button.attrs(
 
 const Embed = styled.img.attrs(() => ({
   alt: "Hide sidebar",
-  src: "/hide.svg",
+  src: "/hide.SVG",
 }))`
   filter: ${theme.grayImg};
 `;
