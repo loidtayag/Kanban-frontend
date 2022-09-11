@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Kanban-React-only-website/static/js/main.9e2f271f.js",
+    "main.js": "/Kanban-React-only-website/static/js/main.aaa75174.js",
     "index.html": "/Kanban-React-only-website/index.html",
-    "main.9e2f271f.js.map": "/Kanban-React-only-website/static/js/main.9e2f271f.js.map"
+    "main.aaa75174.js.map": "/Kanban-React-only-website/static/js/main.aaa75174.js.map"
   },
   "entrypoints": [
-    "static/js/main.9e2f271f.js"
+    "static/js/main.aaa75174.js"
   ]
 }
