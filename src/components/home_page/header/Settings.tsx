@@ -18,7 +18,7 @@ const Button = styled.button`
 
 const Img = styled.img.attrs(() => ({
   alt: "Settings",
-  src: "/gear.SVG",
+  src: "gear.SVG",
 }))`
   width: ${theme.iconSize};
   filter: ${theme.grayImg};
