@@ -84,7 +84,7 @@ const Overlay = styled(
           }}
         >
           <img
-            src="/exit.svg"
+            src="exit.svg"
             alt="Exit overlay"
             style={{
               cursor: "pointer",
