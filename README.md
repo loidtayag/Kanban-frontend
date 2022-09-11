@@ -1,6 +1,4 @@
-#tttt
-#tttt
-#tttt
+This is so that I can put it on my CV, the main repo that'll include backend is called "Web-Dev".
 
 # Getting Started with Create React App
 
