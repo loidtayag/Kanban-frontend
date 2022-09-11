@@ -84,7 +84,7 @@ const Overlay = styled(
           }}
         >
           <img
-            src="exit.svg"
+            src="exit.SVG"
             alt="Exit overlay"
             style={{
               cursor: "pointer",
@@ -448,7 +448,7 @@ const SubtaskInput = (props: {
         type="button"
       >
         <img
-          src="/delete-subtask.svg"
+          src="delete-subtask.SVG"
           alt="Delete subtask"
           style={{
             width: theme.iconSize,
