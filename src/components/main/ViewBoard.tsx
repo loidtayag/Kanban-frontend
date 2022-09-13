@@ -574,7 +574,7 @@ const Task = styled(
             ref={deleteButton}
           >
             <img
-              src="/delete-subtask.svg"
+              src="delete-subtask.SVG"
               alt="Delete subtask"
               style={{
                 width: theme.iconSize,
