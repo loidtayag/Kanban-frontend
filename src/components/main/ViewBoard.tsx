@@ -283,6 +283,12 @@ function setDragula(
       const newBoards = getBoards();
       newBoards[getSelectedBoardIndex()] = BUG;
       localStorage.setItem("boards", JSON.stringify(newBoards));
+      /* Can't find a way using the dragula docs to make a good workaround for this. Problem is dragula changes the
+       * real DOM and if I call "setSelectedBoard()", it causes a white screen crash because React is saying it can't
+       * find a child node probably because setState does a checks its virtual DOM which hasn't been updated by
+       * dragula unlike the real DOM.
+       * */
+      window.location.reload();
     }
   );
 }
