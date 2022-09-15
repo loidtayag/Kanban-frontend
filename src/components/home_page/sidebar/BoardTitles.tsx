@@ -28,6 +28,31 @@ const BoardTitles = (props: { setSelectedBoard: (value: iBoard) => void }) => {
     refs.forEach((ref) => {
       dragula.containers.push(ref);
     });
+    dragula.on("drop", (element: HTMLDivElement) => {
+      /* Get target's new index */
+      let oldItem = 0;
+      let temp = element.previousSibling;
+      while (temp) {
+        oldItem++;
+        temp = temp.previousSibling;
+      }
+
+      /* Swap two boards in local storage and rewrite */
+      let movedItem = 0;
+      let boards = getBoards();
+      while (boards[movedItem].name !== element.innerText) {
+        movedItem++;
+      }
+      console.log(oldItem + " " + movedItem);
+      let oldBoard = boards[oldItem];
+      let newBoard = boards[movedItem];
+      boards[oldItem] = newBoard;
+      boards[movedItem] = oldBoard;
+
+      localStorage.setItem("boards", JSON.stringify(boards));
+      localStorage.setItem("selectedBoard", oldItem as unknown as string);
+      window.location.reload();
+    });
   });
 
   return (
