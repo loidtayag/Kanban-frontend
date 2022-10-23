@@ -1,6 +1,6 @@
 import { InputModal, LabelModal } from "./OverlayModal";
 import React, { MutableRefObject } from "react";
-import { iBoard } from "../../utils/iDatabase";
+import { iBoard } from "../../utils/interfaces";
 
 function CreateStatus({
   selectedBoard,
@@ -19,7 +19,7 @@ function CreateStatus({
       <InputModal
         type="text"
         placeholder="Finished"
-        onBlur={(event) => {
+        onBlur={(event: React.FocusEvent<HTMLInputElement>) => {
           preventDuplicate(event, selectedBoard, data.current);
         }}
         required={true}

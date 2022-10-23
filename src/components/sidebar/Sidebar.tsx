@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { useContext } from "react";
-import { ThemeContext } from "../../../utils/helpers";
+import { scrollTheme } from "../../styles/theme.styles";
+import { ThemeContext } from "../../utils/context";
 
 const Sidebar = styled.div`
   grid-area: sidebar;
-  background-color: ${() => useContext(ThemeContext).background};
+  background-color: ${() => useContext(ThemeContext)?.background};
   display: grid;
   flex-direction: column;
   resize: horizontal;
@@ -14,8 +15,9 @@ const Sidebar = styled.div`
   /* Since it shows a white space if moved too far to the left */
   min-width: 15.5vw;
   /* Don't want resizing to create a horizontal scrollable */
-  max-width: 20vw;
+  max-width: 30vw;
   grid-template-rows: 1fr 9fr auto;
+  ${scrollTheme};
 `;
 
 export default Sidebar;

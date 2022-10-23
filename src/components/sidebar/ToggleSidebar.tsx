@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import React, { ReactNode } from "react";
-import { navSpacing, Text, theme } from "../../../utils/helpers";
+import { textTheme, theme } from "../../styles/theme.styles";
 
-export default function ShownSidebar({
-  setIsSidebar,
-}: {
-  setIsSidebar: () => void;
+export default function ToggleSidebar({
+                                        setShowSidebar
+                                      }: {
+  setShowSidebar: () => void;
 }) {
   return (
     <Flex>
-      <Visual onclick={setIsSidebar}>
+      <Visual onClick={setShowSidebar}>
         <Embed />
       </Visual>
       <Textual>Hide sidebar</Textual>
@@ -25,32 +25,33 @@ const Flex = styled.div`
 
 const Visual = styled.button.attrs(
   ({
-    onclick,
-    children,
-  }: {
-    onclick: (event: any) => any;
+     onClick,
+     children
+   }: {
+    onClick: () => void;
     children: ReactNode;
-  }) => ({ onClick: onclick, children: children })
+  }) => ({ onClick: onClick, children: children })
 )<{
-  onclick: (event: any) => any;
+  onClick: () => void;
   children: ReactNode;
 }>`
   width: 2.4rem;
   border-style: none;
   cursor: pointer;
   background-color: inherit;
-  margin-right: ${navSpacing};
+  margin-right: 2ch;
   padding-left: 0.3rem;
   margin-top: 1ch;
 `;
 
 const Embed = styled.img.attrs(() => ({
   alt: "Hide sidebar",
-  src: "hide.SVG",
+  src: "/hide.svg"
 }))`
-  filter: ${theme.grayImg};
+  filter: ${theme.iconColor};
 `;
 
-const Textual = styled(Text)`
-  color: ${theme.grayText};
+const Textual = styled.p`
+  color: ${theme.textColor};
+  ${textTheme};
 `;

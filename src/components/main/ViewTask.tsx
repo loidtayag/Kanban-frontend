@@ -1,16 +1,17 @@
-import { iBoard, iTask } from "../../utils/iDatabase";
+import { iBoard, iTask } from "../../utils/interfaces";
 import styled from "styled-components";
-import { styledText, theme, ThemeContext } from "../../utils/helpers";
+import { textTheme, theme } from "../../styles/theme.styles";
 import React, { MutableRefObject, useContext, useState } from "react";
 import { getTotalDone } from "./ViewBoard";
 import { InputModal, LabelModal } from "./OverlayModal";
+import { ThemeContext } from "../../utils/context";
 
 function ViewTask({
-  selectedBoard,
-  selectedTask,
-  data,
-  why,
-}: {
+                    selectedBoard,
+                    selectedTask,
+                    data,
+                    why
+                  }: {
   selectedBoard: iBoard;
   selectedTask: iTask;
   data: MutableRefObject<{
@@ -39,7 +40,7 @@ function ViewTask({
       />
       <Title>Status</Title>
       <Status
-        onBlur={(event) => {
+        onBlur={(event: { currentTarget: { value: string; }; }) => {
           data.current.hack = event.currentTarget.value;
         }}
         defaultValue={justWhy(selectedBoard, why)}
@@ -49,7 +50,7 @@ function ViewTask({
             <option
               key={key++}
               value={status.name}
-              style={{ fontWeight: theme.weightText }}
+              style={{ fontWeight: theme.textWeight }}
             >
               {status.name}
             </option>
@@ -79,11 +80,10 @@ function justWhy(
 
 const Subtask = styled(
   ({
-    selectedBoard,
-    selectedTask,
-    data,
-    why,
-  }: {
+     selectedBoard,
+     selectedTask,
+     why
+   }: {
     selectedBoard: iBoard;
     selectedTask: iTask;
     data: MutableRefObject<{
@@ -113,26 +113,26 @@ const Subtask = styled(
               style={{
                 display: "flex",
                 alignItems: "center",
-                position: "relative",
+                position: "relative"
               }}
             >
               <InputModal
                 type="checkbox"
                 defaultChecked={subtask.finished}
-                onChange={(event) => {
+                onChange={(event: React.FocusEvent<HTMLInputElement, Element>) => {
                   const index = selectedBoard.status[why.status].tasks[
                     why.task
-                  ].subtasks.findIndex(
+                    ].subtasks.findIndex(
                     (subtask) =>
                       subtask.desc ===
                       event.target.nextElementSibling?.innerHTML
                   );
                   selectedBoard.status[why.status].tasks[why.task].subtasks[
                     index
-                  ].finished =
+                    ].finished =
                     !selectedBoard.status[why.status].tasks[why.task].subtasks[
                       index
-                    ].finished;
+                      ].finished;
                   setChecked(!checked);
                 }}
                 style={{
@@ -140,18 +140,18 @@ const Subtask = styled(
                   marginBottom: "0",
                   minWidth: "0%",
                   maxWidth: theme.iconSize,
-                  marginRight: "1ch",
+                  marginRight: "0ch"
                 }}
               ></InputModal>
               <LabelModal
                 style={{
-                  color: theme.grayText,
+                  color: theme.textColor,
                   marginBottom: "0",
                   position: "relative",
                   wordWrap: "break-word",
                   maxWidth: "28vw",
-                  left: "1ch",
-                  top: "1ch",
+                  left: "1ch"
+                  // top: "1ch",
                 }}
               >
                 {selectedTask.subtasks[otherKey].desc}
@@ -165,26 +165,26 @@ const Subtask = styled(
 )``;
 
 const Title = styled.p`
-  ${styledText};
-  color: ${() => useContext(ThemeContext).headers};
+  ${textTheme};
+  color: ${() => useContext(ThemeContext)?.headers};
   font-size: 100%;
   margin-bottom: 0.3rem;
 `;
 
 const Desc = styled.p`
-  ${styledText};
+  ${textTheme};
   margin-bottom: 2rem;
   word-wrap: break-word;
 `;
 
 const Status = styled.select`
   height: 2.7rem;
-  background-color: ${() => useContext(ThemeContext).form};
-  border: 0.1rem solid ${theme.grayText};
+  background-color: ${() => useContext(ThemeContext)?.form};
+  border: 0.1rem solid ${theme.textColor};
   border-radius: 0.7rem;
   cursor: pointer;
-  ${styledText};
-  color: ${theme.grayText};
+  ${textTheme};
+  color: ${theme.textColor};
   width: fit-content;
 `;
 
